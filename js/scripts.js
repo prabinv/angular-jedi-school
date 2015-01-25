@@ -1,9 +1,20 @@
 var app = angular.module('JediSchool.App', []);
 
-app.controller('MainController', function($scope, $http) {
+app.controller('MainController', function($scope, DataService) {
   $scope.message = 'Hello Padawans!! Welcome to the Angular.js Jedi School';
 
-  $http.get('http://swapi.co/api/films/1').success(function(response) {
-    $scope.film = response;
+  DataService.getFilms().success(function(response) {
+    $scope.films = response.results;
   });
+});
+
+app.service('DataService', function($http) {
+  var DataService = function() {
+    this.getFilms = function() {
+      return $http.get('http://swapi.co/api/films/');
+    };
+  };
+
+  return new DataService();
+
 });

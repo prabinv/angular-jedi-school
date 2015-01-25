@@ -42,16 +42,10 @@
 
   <div class="container">
 
-    <div class="starter-template" data-ng-cloak ng-controller="MainController">
-      <h1>Bootstrap starter template</h1>
-      <p class="lead">{{message}}</p>
-      <div class="well">
-        <h1>Star Wars - Episode {{film.episode_id}}: {{film.title}}</h1>
-        <p data-ng-bind="film.opening_crawl"></p>
-      </div>
-      </p>
+    <div class="starter-template">
+      <h1>Angular Jedi School</h1>
+      <div data-ng-cloak ng-include src="'films.html'" />
     </div>
-
   </div><!-- /.container -->
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -60,5 +54,28 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/scripts.js"></script>
+
+  <script type="text/ng-template" id="film.html">
+  <div class="starter-template" data-ng-cloak ng-controller="MainController">
+
+    <p class="lead">{{message}}</p>
+    <div class="well">
+      <h1>Star Wars - Episode {{film.episode_id}}: {{film.title}}</h1>
+      <p data-ng-bind="film.opening_crawl"></p>
+    </div>
+  </div>
+  </script>
+
+  <script type="text/ng-template" id="films.html">
+  <div ng-controller="MainController">
+
+    <p class="lead">{{message}}</p>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="film in films">
+        <span data-ng-bind="film.title"></span>
+      </li>
+    </ul>
+  </div>
+  </script>
 </body>
 </html>

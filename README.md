@@ -26,3 +26,17 @@ Steps:
 ###Making HTTP calls
 
 Angular provides the `$http` service, which can be used to make calls to HTTP endpoints. Add this as a dependency to the controller and mae the `get` call to the HTTP endpoint. This returns a promise, which like a callback, returns the data or the error from the HTTP call. Assign this to the scope and bind it to an HTML element.
+
+###Templates
+
+In Angular, templates are written with HTML that contains Angular-specific elements and attributes. Angular combines the template with information from the model and controller to render the dynamic view that a user sees in the browser.
+
+###Services
+
+Angular.js comes with a host of services for common tasks in JavaScript web applications, like $http, $log, $window and $document. It is a good idea to keep the controllers as thin as possible and use a service which encapsulates the business logic.
+
+###Testing
+
+One of the key advantages of using Angular.js is that it makes the code easy to test. Dependency Injection is built into the framework thus enabling easy mocking of dependencies when testing angular components. You can use any JavaScript Testing framework, some of the popular ones being Jasmine & Mocha. [Jasmine: Behavior-Driven JavaScript](http://jasmine.github.io/) is an all-in-one testing framework with the assertion and spying functionalities built in, while [Mocha - the fun, simple, flexible JavaScript test framework](http://mochajs.org/) allows you to pick and choose the assertion and spying libraries.
+
+Angular.js also provides a mocks library which provides support to inject and mock Angular services into unit tests. This is especially useful when trying to mock out responses from `http` calls.
