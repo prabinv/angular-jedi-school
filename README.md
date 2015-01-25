@@ -12,3 +12,7 @@ If you are on a Windows machine, a simple website to serve static files can be s
 ###Your mission
 
 ***Add angular.js and demonstrate a simple data driven page.***
+
+##v1
+
+Steps: 1. Download the [AngularJS — Superheroic JavaScript MVW Framework](https://angularjs.org/) file 2. Add it to the list of scripts.
