@@ -42,9 +42,14 @@
 
   <div class="container">
 
-    <div class="starter-template" ng-controller="MainController">
+    <div class="starter-template" data-ng-cloak ng-controller="MainController">
       <h1>Bootstrap starter template</h1>
       <p class="lead">{{message}}</p>
+      <div class="well">
+        <h1>Star Wars - Episode {{film.episode_id}}: {{film.title}}</h1>
+        <p data-ng-bind="film.opening_crawl"></p>
+      </div>
+      </p>
     </div>
 
   </div><!-- /.container -->

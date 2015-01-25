@@ -15,4 +15,14 @@ If you are on a Windows machine, a simple website to serve static files can be s
 
 ##v1
 
-Steps: 1. Download the [AngularJS — Superheroic JavaScript MVW Framework](https://angularjs.org/) file 2. Add it to the list of scripts.
+Steps:
+
+1.	Download the [AngularJS — Superheroic JavaScript MVW Framework](https://angularjs.org/) javascript file
+2.	Add it to the list of scripts.
+3.	Add the angular module.
+4.	Define the controller on the module, and add $scope as a dependency.
+5.	Define a property on the $scope, and bind to it in the HTML.
+
+###Making HTTP calls
+
+Angular provides the `$http` service, which can be used to make calls to HTTP endpoints. Add this as a dependency to the controller and mae the `get` call to the HTTP endpoint. This returns a promise, which like a callback, returns the data or the error from the HTTP call. Assign this to the scope and bind it to an HTML element.
