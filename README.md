@@ -50,3 +50,7 @@ Routing, like the name suggests, is a configuration mapping views and controller
 Directives are the basic building blocks of angular.
 
 > At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler (`$compile`) to attach a specified behavior to that DOM element or even transform the DOM element and its children.
+
+###Filters
+
+> A filter formats the value of an expression for display to the user. They can be used in view templates, controllers or services and it is easy to define your own filter.

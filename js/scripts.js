@@ -21,9 +21,17 @@ app.controller('MainController', function($scope) {
 });
 
 app.controller('FilmsController', function($scope, DataService) {
-
+  $scope.directors = [''];
+  $scope.selectedDirector = '';
   DataService.getFilms().success(function(response) {
     $scope.films = response.results;
+
+    angular.forEach($scope.films, function(item) {
+      if (jQuery.inArray(item.director, $scope.directors) === -1)
+        $scope.directors.push(item.director);
+    });
+
+    console.log($scope.directors);
   });
 });
 

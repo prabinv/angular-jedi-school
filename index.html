@@ -63,13 +63,18 @@
 
   <script type="text/ng-template" id="films.html">
   <div>
+    <div>
+      <select ng-options="director for director in directors" ng-model="selectedDirector" ></select>
+    </div>
     <ul class="list-group">
-      <li class="list-group-item" ng-repeat="film in films">
-        <a ng-href="#/films/{{$index + 1}}"><span data-ng-bind="film.title"></span></a>
+      <li class="list-group-item" ng-repeat="film in films | filter:{director: selectedDirector}">
+        <a ng-href="#/films/{{$index + 1}}">Episode {{film.episode_id}}: <span data-ng-bind="film.title"></span></a>
+         - Directed By: <span ng-bind="film.director"></span>
       </li>
     </ul>
   </div>
   </script>
+
   <script type="text/ng-template" id="film.html">
   <div>
     <p class="lead">{{message}}</p>
