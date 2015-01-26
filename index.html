@@ -75,7 +75,7 @@
     <p class="lead">{{message}}</p>
     <div class="well">
       <h1>Star Wars - Episode {{film.episode_id}}: {{film.title}}</h1>
-      <p data-ng-bind="film.opening_crawl"></p>
+      <opening-crawl crawltext="{{film.opening_crawl}}" />
     </div>
   </div>
   </script>

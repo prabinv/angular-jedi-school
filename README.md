@@ -44,3 +44,9 @@ Angular.js also provides a mocks library which provides support to inject and mo
 ###Routing
 
 Routing, like the name suggests, is a configuration mapping views and controllers to URL routes. Angular provides a routing module, which is a separate download, to handle the routing for an Angular.js application. Another popular routing module from the community, which is state based and supports nested routes is the UI Router. Angular's routing module can be configured using the `$routeProvider` service.
+
+###Directives
+
+Directives are the basic building blocks of angular.
+
+> At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler (`$compile`) to attach a specified behavior to that DOM element or even transform the DOM element and its children.

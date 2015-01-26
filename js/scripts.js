@@ -48,3 +48,16 @@ app.service('DataService', function($http) {
   return new DataService();
 
 });
+
+app.directive('openingCrawl', function() {
+  return {
+    restrict: 'EA',
+    replace: 'true',
+    template: '<textarea class="scroller">',
+    link: function(scope, elem, attrs) {
+      attrs.$observe('crawltext', function(newValue) {
+        elem.text(newValue);
+      });
+    }
+  };
+});
