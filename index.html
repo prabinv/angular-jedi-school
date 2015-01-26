@@ -33,7 +33,7 @@
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="#/films">Films</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
@@ -44,7 +44,7 @@
 
     <div class="starter-template">
       <h1>Angular Jedi School</h1>
-      <div data-ng-cloak ng-include src="'films.html'" />
+      <div ng-cloak ng-view />
     </div>
   </div><!-- /.container -->
 
@@ -53,11 +53,25 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   <script src="js/angular.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
   <script src="js/scripts.js"></script>
 
-  <script type="text/ng-template" id="film.html">
-  <div class="starter-template" data-ng-cloak ng-controller="MainController">
+  <script type="text/ng-template" id="home.html">
+    <p class="lead">{{message}}</p>
+    <a href="#/films"> List of Star Wars Movies </a>
+  </script>
 
+  <script type="text/ng-template" id="films.html">
+  <div>
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="film in films">
+        <a ng-href="#/films/{{$index + 1}}"><span data-ng-bind="film.title"></span></a>
+      </li>
+    </ul>
+  </div>
+  </script>
+  <script type="text/ng-template" id="film.html">
+  <div>
     <p class="lead">{{message}}</p>
     <div class="well">
       <h1>Star Wars - Episode {{film.episode_id}}: {{film.title}}</h1>
@@ -66,16 +80,5 @@
   </div>
   </script>
 
-  <script type="text/ng-template" id="films.html">
-  <div ng-controller="MainController">
-
-    <p class="lead">{{message}}</p>
-    <ul class="list-group">
-      <li class="list-group-item" ng-repeat="film in films">
-        <span data-ng-bind="film.title"></span>
-      </li>
-    </ul>
-  </div>
-  </script>
 </body>
 </html>

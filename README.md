@@ -40,3 +40,7 @@ Angular.js comes with a host of services for common tasks in JavaScript web appl
 One of the key advantages of using Angular.js is that it makes the code easy to test. Dependency Injection is built into the framework thus enabling easy mocking of dependencies when testing angular components. You can use any JavaScript Testing framework, some of the popular ones being Jasmine & Mocha. [Jasmine: Behavior-Driven JavaScript](http://jasmine.github.io/) is an all-in-one testing framework with the assertion and spying functionalities built in, while [Mocha - the fun, simple, flexible JavaScript test framework](http://mochajs.org/) allows you to pick and choose the assertion and spying libraries.
 
 Angular.js also provides a mocks library which provides support to inject and mock Angular services into unit tests. This is especially useful when trying to mock out responses from `http` calls.
+
+###Routing
+
+Routing, like the name suggests, is a configuration mapping views and controllers to URL routes. Angular provides a routing module, which is a separate download, to handle the routing for an Angular.js application. Another popular routing module from the community, which is state based and supports nested routes is the UI Router. Angular's routing module can be configured using the `$routeProvider` service.
