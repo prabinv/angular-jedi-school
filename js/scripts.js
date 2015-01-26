@@ -49,14 +49,22 @@ app.service('DataService', function($http) {
 
 });
 
-app.directive('openingCrawl', function() {
+app.directive('openingCrawl', function($interval) {
   return {
     restrict: 'EA',
     replace: 'true',
-    template: '<textarea class="scroller">',
+    template: '<textarea readonly class="scroller">',
     link: function(scope, elem, attrs) {
       attrs.$observe('crawltext', function(newValue) {
-        elem.text(newValue);
+
+        var lines = newValue.split('\r\n');
+        var index = 0;
+        $interval(function () {
+          elem.text(elem.text() + '\r\n' + lines[index]);
+          index++;
+          elem[0].scrollTop = elem[0].scrollHeight;
+        }, 1000, lines.length);
+
       });
     }
   };

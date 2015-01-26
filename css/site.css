@@ -7,12 +7,15 @@ body {
 }
 
 .scroller {
-  width: 200px;
+  width: 400px;
   height: 120px;
-  border: 3px solid #cccccc;
+  color: #fff;
+  border: 0px;
   padding: 5px;
   font-family: Tahoma, sans-serif;
-  background-image: url(bg.gif);
+  font-size: 14px;
+  font-weight: bold;
+  background-image: url(bg.png);
   background-position: bottom right;
   background-repeat: no-repeat;
 }
