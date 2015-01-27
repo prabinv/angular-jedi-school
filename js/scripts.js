@@ -49,14 +49,19 @@ app.service('DataService', function($http) {
 
 });
 
-app.directive('openingCrawl', function() {
+app.directive('refreshButton', function() {
   return {
     restrict: 'EA',
     replace: 'true',
-    template: '<textarea class="scroller">',
+    template: '<button type="button" data-loading-text="Refreshing..." class="btn btn-primary">Refresh</button>',
     link: function(scope, elem, attrs) {
-      attrs.$observe('crawltext', function(newValue) {
-        elem.text(newValue);
+      elem.on('click', function(e) {
+
+        elem.button('loading');
+
+        setTimeout(function() {
+          elem.button('reset');
+        }, 1000);
       });
     }
   };
