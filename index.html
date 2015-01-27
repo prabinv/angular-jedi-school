@@ -32,7 +32,7 @@
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
+          <li class="active"><a href="#/">Home</a></li>
           <li><a href="#/films">Films</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -54,6 +54,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/angular.min.js"></script>
   <script src="js/angular-route.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
 
   <script type="text/ng-template" id="home.html">
@@ -63,6 +64,7 @@
 
   <script type="text/ng-template" id="films.html">
   <div>
+    <div refresh-button />
     <ul class="list-group">
       <li class="list-group-item" ng-repeat="film in films">
         <a ng-href="#/films/{{$index + 1}}"><span data-ng-bind="film.title"></span></a>

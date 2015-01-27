@@ -49,6 +49,24 @@ app.service('DataService', function($http) {
 
 });
 
+app.directive('refreshButton', function() {
+  return {
+    restrict: 'EA',
+    replace: 'true',
+    template: '<button type="button" data-loading-text="Refreshing..." class="btn btn-primary">Refresh</button>',
+    link: function(scope, elem, attrs) {
+      elem.on('click', function(e) {
+
+        elem.button('loading');
+
+        setTimeout(function() {
+          elem.button('reset');
+        }, 1000);
+      });
+    }
+  };
+});
+
 app.directive('openingCrawl', function($interval) {
   return {
     restrict: 'EA',
